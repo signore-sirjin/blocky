@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Application {
+  id        String   @id @default(cuid())
+  email     String
+  interest  String?  // 스팸 문자 분류 | 앱 알림 관리 | 둘 다 | 아직 모르겠음
+  experience String? // 불편했던 경험 (자유 입력)
+  utmSource  String?
+  utmMedium  String?
+  utmCampaign String?
+  utmContent String?
+  consent    Boolean
+  createdAt DateTime @default(now())
+
+  @@unique([email])
+}

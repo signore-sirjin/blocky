@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SUIT 웹폰트 */
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 100;
+  src: url('https://cdn.jsdelivr.net/gh/sun-of-earth/SUIT/fonts/static/SUIT-Thin.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 300;
+  src: url('https://cdn.jsdelivr.net/gh/sun-of-earth/SUIT/fonts/static/SUIT-Light.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 400;
+  src: url('https://cdn.jsdelivr.net/gh/sun-of-earth/SUIT/fonts/static/SUIT-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 500;
+  src: url('https://cdn.jsdelivr.net/gh/sun-of-earth/SUIT/fonts/static/SUIT-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 600;
+  src: url('https://cdn.jsdelivr.net/gh/sun-of-earth/SUIT/fonts/static/SUIT-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 700;
+  src: url('https://cdn.jsdelivr.net/gh/sun-of-earth/SUIT/fonts/static/SUIT-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 800;
+  src: url('https://cdn.jsdelivr.net/gh/sun-of-earth/SUIT/fonts/static/SUIT-ExtraBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+html {
+  font-family: 'SUIT', system-ui, sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

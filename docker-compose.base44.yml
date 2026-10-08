@@ -1,0 +1,31 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      # 소스 코드 bind-mount (live reload)
+      - ./:/app
+      # node_modules는 컨테이너 내부에 유지
+      - /app/node_modules
+      # 데이터 영속성
+      - blocky-data:/app/data
+    env_file:
+      - ./.env.base44-defaults
+      - /run/base44/app.env
+    environment:
+      - NODE_ENV=development
+      - BASE44_PREVIEW_MODE=1
+      - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX:-}
+      - NEXTAUTH_URL=http://localhost:3000
+      - WATCHPACK_POLLING=true
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://localhost:3000/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""]
+      interval: 15s
+      timeout: 10s
+      start_period: 60s
+      retries: 5
+
+volumes:
+  blocky-data:

@@ -1,0 +1,29 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "NEXTAUTH_SECRET",
+      "description": "NextAuth JWT 서명용 비밀키. 운영 시 강력한 랜덤값으로 교체 필요.",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    },
+    {
+      "name": "ADMIN_PASSWORD",
+      "description": "관리자 로그인 비밀번호. 운영 시 강력한 비밀번호로 교체 필요.",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    },
+    {
+      "name": "ADMIN_EMAILS",
+      "description": "관리자 이메일 (쉼표로 구분). 기본값 rlatpwls019@gmail.com, 필요시 추가.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "NEXTAUTH_URL",
+      "description": "앱의 공개 URL. 기본값 http://localhost:3000.",
+      "requiredAtBoot": false
+    }
+  ]
+}
